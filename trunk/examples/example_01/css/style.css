@@ -1,0 +1,16 @@
+body {
+  background-color: #AFA;
+  color: #262;
+  margin: 0; padding: 0;  
+}
+
+#moodoo-sls{
+  width:390px; height:140px;
+  position: relative;
+}
+
+#moodoo-sls div {
+  background: white url("../images/film.png") no-repeat left top;
+  position:absolute;
+  width:390px; height:140px;
+}
