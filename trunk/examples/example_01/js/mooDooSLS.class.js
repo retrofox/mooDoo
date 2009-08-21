@@ -3,8 +3,10 @@ var mooDooSLS = new Class({
   Implements: [Events, Options],
     
   options: {
-    transitionTime: 3000,
+    transitionTime: 1000,
+    faseTransitionTime: 0,
     autoplay:true,
+    delayAutoplay: 1000,
     repeat:true,
     random: false,
     indexFirstImg: 0,
@@ -21,10 +23,10 @@ var mooDooSLS = new Class({
     if (this.options.autoplay) {
       (function() {
         this.play()
-      }).delay (1000, this);
+      }).delay (this.options.delayAutoplay, this);
     }
   },
-	
+
   configuracionInicial: function () {
     this.nodeContainer = $(this.options.framesNode);
 
@@ -53,7 +55,7 @@ var mooDooSLS = new Class({
           this.fxN.element.setStyles({
             'z-index': 0
           })
-        }).delay (2000, this);
+        }).delay (this.options.transitionTime, this);
 
       }.bind(this)
     });
@@ -73,7 +75,7 @@ var mooDooSLS = new Class({
           this.fxN1.element.setStyles({
             'z-index': 1000
           })
-        }).delay (2000, this);
+        }).delay (this.options.transitionTime + this.options.faseTransitionTime, this);
 
 				
       }.bind(this)
